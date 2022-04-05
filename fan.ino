@@ -133,7 +133,7 @@ void setup() {
 void loop() {
   ta = get_temp(); // we read the temperature from the sensor
 
-  refresh = map(ta, 15, 50, 50, 10) * 10; // we use refresh to set the ms for how fast should one frame change to another
+  refresh = map(ta, 15, 50, 70, 10) * 10; // we use refresh to set the ms for how fast should one frame change to another
   percentage = map(ta, 15, 50, 0, 100);    // we calculate how fast the fan is spinning in percentage
   
   if(percentage > 100)
