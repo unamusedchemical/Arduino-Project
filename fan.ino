@@ -1,7 +1,7 @@
 #include <LiquidCrystal.h>
 
 const int in = A0; // input for reading the sensor output
-const int fan = 9; // output pin with PWM
+const int fan = 6; // output pin with PWM
 
 int i;
 int refresh, percentage;
@@ -133,8 +133,8 @@ void setup() {
 void loop() {
   ta = get_temp(); // we read the temperature from the sensor
 
-  refresh = map(ta, 15, 50, 70, 10) * 10; // we use refresh to set the ms for how fast should one frame change to another
-  percentage = map(ta, 15, 50, 0, 100);    // we calculate how fast the fan is spinning in percentage
+  refresh = map(ta, 25, 50, 70, 10) * 10; // we use refresh to set the ms for how fast should one frame change to another
+  percentage = map(ta, 25, 50, 0, 100);    // we calculate how fast the fan is spinning in percentage
   
   if(percentage > 100)
     percentage = 100;
